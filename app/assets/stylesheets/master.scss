@@ -1,5 +1,6 @@
 @import "bootstrap";
 
+
 .goodie-box {
   -moz-box-shadow: 2px 2px 4px 0 #AFE3C7;
   -webkit-box-shadow: 2px 2px 2px 0 #AFE3C7;
@@ -25,4 +26,10 @@ body {
 .navbar {
   background: image_url('tex2res4.png');
   box-shadow: 2px 5px 6px #B5C2A7;
+}
+
+.navbar-inverse .navbar-brand {
+  color: #8BC44D;
+    font-family: 'introheadr-base-webfont' sans-serif;
+    font-size: 30px;
 }
