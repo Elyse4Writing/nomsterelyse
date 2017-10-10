@@ -1,4 +1,8 @@
 Rails.application.configure do
+  config.action_mailer.default_url_options = { host: 'elyse-firehose-projects-elyse4writing.c9users.io' }
+  
+
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
