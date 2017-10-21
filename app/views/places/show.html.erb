@@ -21,7 +21,7 @@
         var myLatLng = {lat: <%= @place.latitude %>, lng:  <%= @place.longitude %>};
 
         var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 12,
+          zoom: 16,
           center: myLatLng
         });
 
@@ -37,7 +37,9 @@
     </script>
 
     <div id="map"></div>
-    <% end %>
+<% end %>
+    
+    <br />
     
 <div class="float-right">
     <% if current_user && current_user == @place.user %>
@@ -52,8 +54,12 @@
 
 </div>
 
-
-
+<div class="clear"></div>
+<%= simple_form_for @comment, url: place_comments_path(@place) do |f| %>
+   <%= f.input :message %>
+   <%= f.input :rating %>
+   <%= f.submit "Add a Comment", class: 'bton btn-primary' %>
+<% end %>
 
 
 

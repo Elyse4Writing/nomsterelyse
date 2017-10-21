@@ -18,9 +18,10 @@ class PlacesController < ApplicationController
       end
   end
   
-  def show
+def show
     @place = Place.find(params[:id])
-  end
+    @comment = Comment.new
+end
   
   def edit
     @place = Place.find(params[:id])
