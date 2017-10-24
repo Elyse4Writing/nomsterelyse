@@ -21,6 +21,7 @@ class PlacesController < ApplicationController
 def show
     @place = Place.find(params[:id])
     @comment = Comment.new
+    @photo = Photo.new
 end
   
   def edit
@@ -60,4 +61,5 @@ end
   def place_params
     params.require(:place).permit(:name, :description, :pricerange, :address)
   end
+  
 end
