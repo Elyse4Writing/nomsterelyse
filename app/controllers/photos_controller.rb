@@ -8,6 +8,7 @@ def create
     redirect_to place_path(@place)
 end
 
+
 private
 
 def photos_params
