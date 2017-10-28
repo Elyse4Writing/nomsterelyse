@@ -48,7 +48,7 @@ end
   
   def destroy
     @place = Place.find(params[:id])
-    if @place.user != current_user
+  if @place.user != current_user
     return render text: 'Not Allowed', status: :forbidden
   end
   
