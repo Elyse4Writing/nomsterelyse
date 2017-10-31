@@ -71,3 +71,20 @@ blockquote:before {
 blockquote p {
   display: inline;
 }
+
+.photos {
+    align: left;
+    height: 200px;
+    width: 300px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.caption {
+    align: left;
+    font-family: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
+    font-size: 10px;
+    line-height: 15px;
+  
+}
+ 
