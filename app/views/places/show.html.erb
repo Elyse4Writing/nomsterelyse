@@ -1,4 +1,4 @@
-<div class= "goodie-box col-10 offset-1">
+<div class= "goodie-box col-10 offset-1 container">
     
 <h1><%= @place.name %></h1>
 <i><%= @place.address %></i>
@@ -37,6 +37,7 @@
     </script>
 
     <div id="map"></div>
+    
 <% end %>
     
     <br />
@@ -57,20 +58,14 @@
 <br />
 <br />
      
+<%= render "comments" %>
 
-
- <div class="photos">
+ <div class="col-md-4">
     <% @place.photos.each do |photo| %>
-    <%= image_tag photo.picture, width: 300, height: 200 %> 
+    <%= image_tag photo.picture, class: "photos" %> 
+    <p><%= photo.caption %></p>
+    <% end %>
  </div>
-
-<% end %>
-
-<div> 
-
-         </blockquote>
-         
-</div>
 
 
      <br />
@@ -80,10 +75,19 @@
 
 <div class="clear"></div>
 
-<%= render "comments" %>
+
 
 <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
   Add your comments here!
+</button>
+
+<br />
+<br />
+
+<!-- Button trigger photomodal -->
+
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#photoModal">
+  Add photos and captions here!
 </button>
 
 <!-- Modal -->
@@ -112,23 +116,39 @@
 
 
 
+
 <div class="clear">
          
 </div>
 
 
-<div>
-            <%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
+
+<!-- Modal -->
+
+<div class="modal fade" id="photoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Add photos and caption</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+         <%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
             <%= f.input :picture %>
             <%= f.input :caption %>
-            <%= f.submit "Add photos and captions", class: 'btn btn-primary' %>
-            <% end %>  
+      </div>
+      <div class="modal-footer">
+        <%= f.submit "Add photos and captions", class: 'btn btn-primary' %>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+            
 </div> 
 
-        <div> 
-
-        <br/><br/>
-        
-</div>
 
  
