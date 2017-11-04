@@ -61,12 +61,12 @@
 <%= render "comments" %>
 
 <div class="row">
- <div class="col-md-4">
     <% @place.photos.each do |photo| %>
-    <%= image_tag photo.picture, class: "photos" %> 
-    <p><%= photo.caption %></p>
+        <div class="col-xl-4 col-lg-6 col-md-12">
+            <%= image_tag photo.picture, class: "photos" %> 
+            <p><%= photo.caption %></p>
+        </div>
     <% end %>
- </div>
 </div>
 
      <br />
